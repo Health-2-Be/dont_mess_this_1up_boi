@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nicholas.poundslasherfinal">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Startpage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".signup" />
+        <activity android:name=".login" />
+        <activity android:name=".afterlogin" />
+        <activity android:name=".bmicalc" />
+        <activity android:name=".statusreport" />
+        <activity android:name=".settingpage" />
+        <activity android:name=".dietary" />
+        <activity android:name=".dietarybreakfast" />
+        <activity
+            android:name=".dietarydinner"
+            android:label="@string/title_activity_dietarydinner"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".dietarylunch" />
+        <activity android:name=".dietarysnacks" />
+        <activity android:name=".dietaryquickmeal" />
+        <activity android:name=".exercise" />
+        <activity android:name=".exercisecore" />
+        <activity android:name=".exerciseendurance" />
+        <activity android:name=".exerciseflexibility" />
+        <activity android:name=".exercisespeed" />
+        <activity android:name=".exercisestamina" />
+        <activity android:name=".exercisestrength" />
+        <activity android:name=".exercisestretches" />
+        <activity android:name=".forgotpass" />
+        <activity android:name=".machine" />
+        <activity android:name=".machinearms" />
+        <activity android:name=".machineback" />
+        <activity android:name=".machinecore" />
+        <activity android:name=".machinelegs" />
+        <activity android:name=".machinelowerbody" />
+        <activity android:name=".machineupperbody"></activity>
+    </application>
+
+</manifest>
