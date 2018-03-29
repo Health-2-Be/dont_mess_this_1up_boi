@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/animationstart"
+    android:id="@+id/myLayoutforgotpass"
     tools:context="com.example.nicholas.poundslasherfinal.forgotpass">
 
     <EditText

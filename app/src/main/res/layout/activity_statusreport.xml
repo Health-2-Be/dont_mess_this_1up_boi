@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context="com.example.nicholas.poundslasherfinal.statusreport">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Work in Progress"
+        android:textSize="32dp"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black" />
     <Button
         android:id="@+id/buttonbmi"
         android:layout_width="wrap_content"
