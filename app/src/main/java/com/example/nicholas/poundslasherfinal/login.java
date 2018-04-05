@@ -14,19 +14,28 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+
 public class login extends AppCompatActivity implements View.OnClickListener{
 
 
-
+    private FirebaseAuth mAuth;
     private Button buttonsignup2;
     private Button btnlogin;
     private Button buttonfp;
     ProgressBar progressBar3;
     EditText editTextp,editTexte;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         buttonsignup2 = (Button) findViewById(R.id.buttonsignup2);
         buttonsignup2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +63,7 @@ public class login extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
+        mAuth = FirebaseAuth.getInstance();
     }
     public void openSignUp(){
         Intent intent = new Intent(this,signup.class);
@@ -95,6 +105,17 @@ public class login extends AppCompatActivity implements View.OnClickListener{
 
         progressBar3.setVisibility(View.VISIBLE);
 
+        mAuth.signInWithEmailAndPassword(email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    openAfterLogin();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_SHORT);
+                }
+            }
+        });
 
 
     }
