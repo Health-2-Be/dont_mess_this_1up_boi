@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 public class signup extends AppCompatActivity implements View.OnClickListener{
 
-    EditText editTexte,editTextp;
+    EditText editTexte,editTextp,editTextpa;
     ProgressBar progressBar2;
     private FirebaseAuth mAuth;
 
@@ -31,10 +31,9 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         editTexte =(EditText)findViewById(R.id.editTexte);
         editTextp =(EditText)findViewById(R.id.editTextp);
+        editTextpa = (EditText)findViewById(R.id.editTextpa);
         progressBar2 =(ProgressBar)findViewById(R.id.progressBar2);
         mAuth = FirebaseAuth.getInstance();
 
@@ -44,6 +43,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
     private void registerUser() {
         String email = editTexte.getText().toString().trim();
         String Password = editTextp.getText().toString().trim();
+        String Passwordagain = editTextpa.getText().toString().trim();
 
         if (email.isEmpty()) {
             editTexte.setError("Email is required");
@@ -63,6 +63,11 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
         if (Password.length() < 6) {
             editTextp.setError("Please fill in a vaild password");
             editTextp.requestFocus();
+            return;
+        }
+        if(!(Passwordagain.equals(Password))){
+            editTextpa.setError("Passwords do not match");
+            editTextpa.requestFocus();
             return;
         }
 
