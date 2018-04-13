@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 public class login extends AppCompatActivity implements View.OnClickListener{
 
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     private Button buttonsignup2;
     private Button btnlogin;
     private Button buttonfp;
